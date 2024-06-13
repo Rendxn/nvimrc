@@ -24,6 +24,7 @@ return {
                 "lua_ls",
                 "marksman",
                 "gopls",
+                "tsserver",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
