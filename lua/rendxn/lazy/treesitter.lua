@@ -38,7 +38,7 @@ return {
 					set_jumps = true, -- whether to set jumps in the jumplist
 					goto_next_start = {
 						["]m"] = { query = "@function.outer", desc = "Next function start" },
-						["]]"] = { query = "@class.outer", desc = "Next class start" },
+						["]]"] = { query = "@parameter.inner", desc = "Next parameter start" },
 						--
 						-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
 						["]o"] = { query = "@loop.*", desc = "Next loop" },
@@ -48,7 +48,6 @@ return {
 						-- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
 						["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
 						["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
-						["]p"] = { query = "@parameter.inner", desc = "Next parameter" },
 					},
 					goto_next_end = {
 						["]M"] = { query = "@function.outer", desc = "Next function end" },
@@ -56,14 +55,12 @@ return {
 					},
 					goto_previous_start = {
 						["[m"] = { query = "@function.outer", desc = "Previous function" },
-						["[["] = { query = "@class.outer", desc = "Previous class" },
-						["[p"] = { query = "@parametey.inner", desc = "Previous parameter" },
+						["[["] = { query = "@parameter.inner", desc = "Previous parameter" },
 						["[z"] = { query = "@fold", query_group = "folds", desc = "Previous fold" },
 						["]o"] = { query = "@loop.*", desc = "Previous loop" },
 					},
 					goto_previous_end = {
-						["[M"] = { query = "@function.outer", "Previous function end" },
-						["[]"] = { query = "@class.outer", desc = "Previous class end" },
+						["[M"] = { query = "@function.outer", desc = "Previous function end" },
 					},
 					-- Below will go to either the start or the end, whichever is closer.
 					-- Use if you want more granular movements
