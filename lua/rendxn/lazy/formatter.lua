@@ -16,7 +16,7 @@ return {
 					json = { "prettier" },
 					markdown = { "prettier" },
 					lua = { "stylua" },
-					go = { "goimports", "gofumpt" },
+					go = { "goimports", "gofumpt", "golines" },
 				},
 				format_on_save = {
 					lsp_fallback = true,
