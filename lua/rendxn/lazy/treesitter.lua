@@ -9,6 +9,9 @@ return {
 				"typescript",
 				"lua",
 				"jsdoc",
+				"go",
+				"gomod",
+				"gosum",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
