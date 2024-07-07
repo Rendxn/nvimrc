@@ -1,1 +1,1 @@
-require('rendxn')
+require('rendxn.core')
