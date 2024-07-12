@@ -1,4 +1,10 @@
 return {
 	"folke/zen-mode.nvim",
-	opts = {},
+	opts = {
+		plugins = {
+			options = {
+				laststatus = 3,
+			},
+		},
+	},
 }
