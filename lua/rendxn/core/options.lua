@@ -18,7 +18,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- vim.opt.termguicolors = true
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
