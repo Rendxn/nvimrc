@@ -19,6 +19,8 @@ vim.opt.incsearch = true
 
 -- vim.opt.termguicolors = true
 vim.cmd.colorscheme("rose-pine")
+-- Hides ~ from empty lines
+vim.cmd.highlight("NonText guifg=bg")
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
