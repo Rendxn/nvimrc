@@ -24,9 +24,6 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
-		-- LSPs not managed by Mason
-		lspconfig.dartls.setup({})
-
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -151,6 +148,25 @@ return {
 			}, {
 				{ name = "buffer" },
 			}),
+		})
+
+		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline({ "/", "?" }, {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+
+		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{ name = "cmdline" },
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false },
 		})
 	end,
 }
