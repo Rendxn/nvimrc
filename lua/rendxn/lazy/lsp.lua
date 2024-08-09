@@ -24,6 +24,9 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
+		-- LSPs not managed by Mason
+		lspconfig.dartls.setup({})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
