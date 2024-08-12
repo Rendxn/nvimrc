@@ -25,7 +25,8 @@ return {
 				search = word,
 				vimgrep_arguments = table.insert(config.vimgrep_arguments, "--fixed-strings"),
 			})
-		end, { desc = "Search text in workspace" })
+		end, { desc = "Search text in workspace (fixed string)" })
+		vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Search text in workspace (regex)" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
 	end,
 }
