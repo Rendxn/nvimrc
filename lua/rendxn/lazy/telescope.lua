@@ -8,7 +8,16 @@ return {
 		"folke/todo-comments.nvim",
 	},
 	config = function()
-		require("telescope").setup({})
+		local separator = package.config:sub(1, 1)
+
+		require("telescope").setup({
+			pickers = {
+				find_files = {
+					file_ignore_patterns = { ".git" .. separator },
+					hidden = true, -- show hidden/dotfiles
+				},
+			},
+		})
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("flutter")
 
