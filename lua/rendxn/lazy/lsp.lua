@@ -81,6 +81,9 @@ return {
 				"marksman",
 				"gopls",
 				"tsserver",
+				"jsonls",
+				"yamlls",
+				"emmet_language_server",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -97,6 +100,73 @@ return {
 								runtime = { version = "Lua 5.1" },
 								diagnostics = {
 									globals = { "vim", "it", "describe", "before_each", "after_each" },
+								},
+							},
+						},
+					})
+				end,
+
+				["yamlls"] = function()
+					lspconfig.yamlls.setup({
+						capabilities = capabilities,
+						settings = {
+							yaml = {
+								schemas = {
+									["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+										"docker-compose*.{yml,yaml}",
+									},
+									["http://json.schemastore.org/github-workflow.json"] = ".github/workflows/*.{yml,yaml}",
+									["http://json.schemastore.org/github-action.json"] = ".github/action.{yml,yaml}",
+									["https://raw.githubusercontent.com/Microsoft/azure-pipelines-vscode/refs/heads/main/service-schema.json"] = {
+										"azure-pipelines/*.{yaml,yml}",
+										"azure-pipelines.{yaml,yml}",
+									},
+								},
+							},
+						},
+					})
+				end,
+
+				["jsonls"] = function()
+					lspconfig.jsonls.setup({
+						capabilities = capabilities,
+						filetypes = { "json", "jsonc" },
+						settings = {
+							json = {
+								-- Schemas https://www.schemastore.org
+								schemas = {
+									{
+										fileMatch = { "package.json" },
+										url = "https://json.schemastore.org/package.json",
+									},
+									{
+										fileMatch = { "tsconfig*.json" },
+										url = "https://json.schemastore.org/tsconfig.json",
+									},
+									{
+										fileMatch = {
+											".prettierrc",
+											".prettierrc.json",
+											"prettier.config.json",
+										},
+										url = "https://json.schemastore.org/prettierrc.json",
+									},
+									{
+										fileMatch = { ".eslintrc", ".eslintrc.json" },
+										url = "https://json.schemastore.org/eslintrc.json",
+									},
+									{
+										fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
+										url = "https://json.schemastore.org/babelrc.json",
+									},
+									{
+										fileMatch = { "nx.json" },
+										url = "https://raw.githubusercontent.com/nrwl/nx/refs/heads/master/packages/nx/schemas/nx-schema.json",
+									},
+									{
+										fileMatch = { "project.json" },
+										url = "https://raw.githubusercontent.com/nrwl/nx/refs/heads/master/packages/nx/schemas/project-schema.json",
+									},
 								},
 							},
 						},
