@@ -79,11 +79,15 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"marksman",
-				"gopls",
 				"tsserver",
 				"jsonls",
 				"yamlls",
 				"emmet_language_server",
+				"gopls",
+				"goimports",
+				"gofumpt",
+				"golines",
+				"delve",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)

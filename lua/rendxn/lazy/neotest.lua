@@ -33,9 +33,9 @@ return {
 				neotest.summary.toggle()
 			end, { desc = "Toggle test summary window" })
 
-			--   vim.keymap.set("n", "<leader>td", function()
-			--     neotest.run.run({ strategy = "dap" })
-			--   end, { desc = "Debug nearest test" })
+			vim.keymap.set("n", "<leader>td", function()
+				neotest.run.run({ strategy = "dap" })
+			end, { desc = "Debug nearest test" })
 		end,
 	},
 }

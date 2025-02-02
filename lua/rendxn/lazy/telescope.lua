@@ -19,7 +19,6 @@ return {
 			},
 		})
 		require("telescope").load_extension("fzf")
-		require("telescope").load_extension("flutter")
 
 		local config = require("telescope.config").values
 		local builtin = require("telescope.builtin")
