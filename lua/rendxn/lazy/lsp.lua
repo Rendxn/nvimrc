@@ -74,28 +74,30 @@ return {
 		})
 
 		require("fidget").setup({})
-		require("mason").setup()
-		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"lua_ls",
-				"marksman",
-				"tsserver",
-				"jsonls",
-				"yamlls",
-				"emmet_language_server",
-				"gopls",
-				"goimports",
-				"gofumpt",
-				"golines",
-				"delve",
+		require("mason").setup({
+			opts = {
+				ensure_installed = {
+					"gopls",
+					"goimports",
+					"gofumpt",
+					"golines",
+					"delve",
+					"lua_ls",
+					"marksman",
+					"tsserver",
+					"jsonls",
+					"yamlls",
+					"emmet_language_server",
+				},
 			},
+		})
+		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name) -- default handler (optional)
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
 					})
 				end,
-
 				["lua_ls"] = function()
 					lspconfig.lua_ls.setup({
 						capabilities = capabilities,
