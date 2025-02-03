@@ -18,6 +18,11 @@ return {
 					color = "#ec407a",
 					name = "GoWork",
 				},
+				["go.sum"] = {
+					icon = "",
+					color = "#ec407a",
+					name = "GoSum",
+				},
 			},
 		})
 	end,

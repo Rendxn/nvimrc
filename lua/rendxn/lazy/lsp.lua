@@ -75,23 +75,23 @@ return {
 
 		require("fidget").setup({})
 		require("mason").setup({
-			opts = {
-				ensure_installed = {
-					"gopls",
-					"goimports",
-					"gofumpt",
-					"golines",
-					"delve",
-					"lua_ls",
-					"marksman",
-					"ts_ls",
-					"jsonls",
-					"yamlls",
-					"emmet_language_server",
-				},
+			ensure_installed = {
+				"goimports",
+				"gofumpt",
+				"golines",
+				"delve",
 			},
 		})
 		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"gopls",
+				"lua_ls",
+				"marksman",
+				"ts_ls",
+				"jsonls",
+				"yamlls",
+				"emmet_language_server",
+			},
 			handlers = {
 				function(server_name) -- default handler (optional)
 					lspconfig[server_name].setup({
@@ -105,7 +105,7 @@ return {
 							Lua = {
 								runtime = { version = "Lua 5.1" },
 								diagnostics = {
-									globals = { "vim", "it", "describe", "before_each", "after_each" },
+									globals = { "vim" },
 								},
 							},
 						},
