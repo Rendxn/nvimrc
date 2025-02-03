@@ -84,7 +84,7 @@ return {
 					"delve",
 					"lua_ls",
 					"marksman",
-					"tsserver",
+					"ts_ls",
 					"jsonls",
 					"yamlls",
 					"emmet_language_server",
