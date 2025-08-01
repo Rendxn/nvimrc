@@ -16,7 +16,7 @@ return {
       require("telescope").setup({
         pickers = {
           find_files = {
-            find_command = { "rg", "--files", "sortr=modified" },
+            find_command = { "rg", "--files", "--sortr=modified" },
           },
           oldfiles = {
             cwd_only = true,
