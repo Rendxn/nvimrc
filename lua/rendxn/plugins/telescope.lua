@@ -15,10 +15,9 @@ return {
 
       require("telescope").setup({
         pickers = {
-          -- find_files = {
-          --   file_ignore_patterns = { ".git" .. separator, "node_modules" },
-          --   hidden = true, -- show hidden/dotfiles
-          -- },
+          find_files = {
+            find_command = { "rg", "--files", "sortr=modified" },
+          },
           oldfiles = {
             cwd_only = true,
           },
