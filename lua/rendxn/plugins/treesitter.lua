@@ -5,20 +5,26 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
+				-- web
 				"javascript",
 				"tsx",
 				"typescript",
 				"css",
 				"scss",
 				"html",
+				"yaml",
 				"markdown",
 				"jsdoc",
 				"json",
 				"jsonc",
+				"graphql",
+				-- go stuff
 				"go",
 				"gomod",
 				"gosum",
+				-- lua + vim
 				"lua",
+				"vim",
 				"vimdoc",
 			},
 

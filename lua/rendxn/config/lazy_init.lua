@@ -12,5 +12,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	spec = "rendxn.lazy",
+	spec = { { import = "rendxn.plugins" }, { import = "rendxn.plugins.lsp" } },
 })

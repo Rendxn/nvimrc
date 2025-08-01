@@ -28,3 +28,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
 vim.opt.wrap = false
+
+vim.diagnostic.config({ virtual_text = true })

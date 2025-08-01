@@ -1,7 +1,20 @@
 return {
 	{
 		"stevearc/conform.nvim",
+		dependencies = { "mason.nvim" },
+		lazy = true,
+		cmd = "ConformInfo",
 		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{
+				"<leader>cF",
+				function()
+					require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+				end,
+				mode = { "n", "v" },
+				desc = "Format Injected Langs",
+			},
+		},
 		config = function()
 			local conform = require("conform")
 
@@ -23,16 +36,9 @@ return {
 					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 						return
 					end
-					return { timeout_ms = 500, lsp_format = "fallback" }
+					return { timeout_ms = 3000, lsp_format = "fallback" }
 				end,
 			})
-
-			vim.keymap.set({ "n", "v" }, "<leader>f", function()
-				conform.format({
-					lsp_fallback = true,
-					async = false,
-				})
-			end, { desc = "Format file or range (in visual mode)" })
 
 			vim.api.nvim_create_user_command("FormatDisable", function(args)
 				if args.bang then
