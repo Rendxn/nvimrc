@@ -11,9 +11,10 @@ return {
       "folke/todo-comments.nvim",
     },
     config = function()
-      local separator = package.config:sub(1, 1)
-
       require("telescope").setup({
+        defaults = {
+          path_display = { "truncate" },
+        },
         pickers = {
           find_files = {
             find_command = { "rg", "--files", "--sortr=modified" },

@@ -62,6 +62,10 @@ return {
       capabilities = capabilities,
     })
 
+    vim.lsp.config("graphql", {
+      filetypes = { "graphql", "gql", "typescriptreact", "typescript" },
+    })
+
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
