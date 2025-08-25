@@ -18,7 +18,7 @@
   "mason.nvim": { "branch": "main", "commit": "7dc4facca9702f95353d5a1f87daf23d78e31c2a" },
   "mini.pairs": { "branch": "main", "commit": "1e1ca3f60f58d4050bf814902b472eec9963a5dd" },
   "neogen": { "branch": "main", "commit": "b2e78708876f4da507839726816010a68e33fec8" },
-  "neotest": { "branch": "master", "commit": "35a59c1f59dbb954d92b74ab64a966a668cea495" },
+  "neotest": { "branch": "master", "commit": "52fca6717ef972113ddd6ca223e30ad0abb2800c" },
   "neotest-golang": { "branch": "main", "commit": "723b55da4a84204aa6186398dc8d99cc54a6d180" },
   "neotest-jest": { "branch": "main", "commit": "9be5b8221513d1adfedb9668273f95e593d75d86" },
   "neotest-vitest": { "branch": "main", "commit": "a6099e1fb55a2c2851da3dd0f4d510af9a234c92" },

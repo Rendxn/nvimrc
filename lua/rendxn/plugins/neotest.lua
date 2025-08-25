@@ -1,6 +1,9 @@
 return {
   {
     "nvim-neotest/neotest",
+    -- pinning to this commit because I'm getting
+    -- tests not found with newer versions
+    commit = "52fca67",
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
