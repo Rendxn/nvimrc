@@ -1,85 +1,86 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	commmit = "53b32a",
-	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				-- web
-				"javascript",
-				"tsx",
-				"typescript",
-				"css",
-				"scss",
-				"html",
-				"yaml",
-				"markdown",
-				"jsdoc",
-				"json",
-				"jsonc",
-				"graphql",
-				-- go stuff
-				"go",
-				"gomod",
-				"gosum",
-				-- lua + vim
-				"lua",
-				"vim",
-				"vimdoc",
-			},
+  "nvim-treesitter/nvim-treesitter",
+  branch = "master",
+  lazy = false,
+  build = ":TSUpdate",
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = {
+        -- web
+        "javascript",
+        "tsx",
+        "typescript",
+        "css",
+        "scss",
+        "html",
+        "yaml",
+        "markdown",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "graphql",
+        -- go stuff
+        "go",
+        "gomod",
+        "gosum",
+        -- lua + vim
+        "lua",
+        "vim",
+        "vimdoc",
+      },
 
-			-- Install parsers synchronously (only applied to `ensure_installed`)
-			sync_install = false,
+      -- Install parsers synchronously (only applied to `ensure_installed`)
+      sync_install = false,
 
-			-- Automatically install missing parsers when entering buffer
-			-- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-			auto_install = false,
+      -- Automatically install missing parsers when entering buffer
+      -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
+      auto_install = false,
 
-			indent = {
-				enable = true,
-			},
+      indent = {
+        enable = true,
+      },
 
-			highlight = {
-				enable = true,
+      highlight = {
+        enable = true,
 
-				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-				-- Set this to `true` if you depend on "syntax" being enabled (like for indentation).
-				-- Using this option may slow down your editor, and you may see some duplicate highlights.
-				-- Instead of true it can also be a list of languages
-				additional_vim_regex_highlighting = { "markdown" },
-			},
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on "syntax" being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = { "markdown" },
+      },
 
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<C-space>",
-					node_incremental = "<C-space>",
-					scope_incremental = false,
-					node_decremental = "<bs>",
-				},
-			},
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
 
-			textobjects = {
-				move = {
-					enable = true,
-					goto_next_start = {
-						["]f"] = "@function.outer",
-						["]c"] = "@class.outer",
-						["]a"] = "@parameter.inner",
-					},
-					goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-					goto_previous_start = {
-						["[f"] = "@function.outer",
-						["[c"] = "@class.outer",
-						["[a"] = "@parameter.inner",
-					},
-					goto_previous_end = {
-						["[F"] = "@function.outer",
-						["[C"] = "@class.outer",
-						["[A"] = "@parameter.inner",
-					},
-				},
-			},
-		})
-	end,
+      textobjects = {
+        move = {
+          enable = true,
+          goto_next_start = {
+            ["]f"] = "@function.outer",
+            ["]c"] = "@class.outer",
+            ["]a"] = "@parameter.inner",
+          },
+          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+          goto_previous_start = {
+            ["[f"] = "@function.outer",
+            ["[c"] = "@class.outer",
+            ["[a"] = "@parameter.inner",
+          },
+          goto_previous_end = {
+            ["[F"] = "@function.outer",
+            ["[C"] = "@class.outer",
+            ["[A"] = "@parameter.inner",
+          },
+        },
+      },
+    })
+  end,
 }
