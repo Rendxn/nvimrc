@@ -15,10 +15,10 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- vim.opt.termguicolors = true
-vim.cmd.colorscheme("rose-pine")
+vim.opt.termguicolors = true
+vim.cmd.colorscheme("tokyonight-moon")
 -- Hides ~ from empty lines
-vim.cmd.highlight("NonText guifg=bg")
+-- vim.cmd.highlight("NonText guifg=bg")
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
