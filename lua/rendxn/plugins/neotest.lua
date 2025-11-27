@@ -20,7 +20,7 @@ return {
         adapters = {
           require("neotest-vitest"),
           require("neotest-jest"),
-          require("neotest-golang")({ runner = "gotestsum" }),
+          require("neotest-golang"),
         },
       })
 
