@@ -8,6 +8,7 @@ return {
       "emmet_ls",
       "cssls",
       "cssmodules_ls",
+      "stylelint_lsp",
       "graphql",
       "jsonls",
       "lua_ls",
@@ -21,7 +22,6 @@ return {
       "mason-org/mason.nvim",
       opts = {
         ensure_installed = {
-          "stylelint",
           "eslint_d",
           "prettierd",
         },
