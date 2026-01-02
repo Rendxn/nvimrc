@@ -12,6 +12,7 @@ return {
       "graphql",
       "jsonls",
       "lua_ls",
+      "eslint",
 
       -- formatters
       "stylua",
