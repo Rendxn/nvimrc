@@ -66,6 +66,16 @@ return {
       filetypes = { "graphql", "gql", "typescriptreact", "typescript" },
     })
 
+    vim.lsp.config("stylelint_lsp", {
+      filetypes = { "css", "scss" },
+      settings = {
+        stylelintplus = {
+          autoFixOnSave = true,
+          autoFixOnFormat = true,
+        },
+      },
+    })
+
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
